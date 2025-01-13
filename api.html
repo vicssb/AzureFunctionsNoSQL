@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Results</title>
+    <style>
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px;
+            width: 300px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>API Results</h1>
+    <div id="api1-results" class="card-container"></div>
+    <div id="api2-results" class="card-container"></div>
+
+    <script>async function fetchApi1() {
+    const response = await fetch('http://localhost:7101/api/all');
+            const data = await response.json();
+            displayResults(data, 'api1-results');
+        }
+
+        async function fetchApi2() {
+            const response = await fetch('http://localhost:7101/api/detail');
+            const data = await response.json();
+            displayResults(data, 'api2-results');
+        }
+
+        function displayResults(data, containerId) {
+            const container = document.getElementById(containerId);
+            data.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    <h2>${item.title}</h2>
+                    <p>${item.description}</p>
+                `;
+                container.appendChild(card);
+            });
+        }
+
+        fetchApi1();
+        fetchApi2();</script>
+</body>
+</html>

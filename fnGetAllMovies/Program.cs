@@ -6,11 +6,9 @@ using Microsoft.Extensions.Hosting;
 var builder = FunctionsApplication.CreateBuilder(args);
 
 builder.ConfigureFunctionsWebApplication();
-
-
 builder.Services.AddSingleton(s =>
-{ 
-string connectionString = Environment.GetEnvironmentVariable("CosmoDBCnnection");
+{
+    string connectionString = Environment.GetEnvironmentVariable("CosmoDBCnnection");
     return new CosmosClient(connectionString);
 
 });
