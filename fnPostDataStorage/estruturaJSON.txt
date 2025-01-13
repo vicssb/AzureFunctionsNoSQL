@@ -1,0 +1,4 @@
+{
+"thumb" : "https://stafilxvicssb.blob.core.windows.net/image/miniatura%20v%C3%ADdeo%20youtube%202.png",
+"video" : "https://stafilxvicssb.blob.core.windows.net/video/suelen.ss22_7254288057552145670.mp4",
+}
