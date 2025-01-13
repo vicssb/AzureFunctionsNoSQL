@@ -38,7 +38,7 @@ namespace fnPostDatabase
     }
 }
 
-git remote add origin https://github.com/vicssb/Azure-Functions---NoSQL.git
+/*git remote add origin https://github.com/vicssb/Azure-Functions---NoSQL.git
      git branch -M main
      git push -u origin main
-     
+  */   
